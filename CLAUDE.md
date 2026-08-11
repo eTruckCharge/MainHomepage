@@ -38,10 +38,30 @@ gepflegt und muss trotzdem synchron bleiben.
 
 ## Interreg-Konformität
 
-Der Footer mit dem Pflicht-Co-Branding (eTruckCharge-Logo, Interreg-Logo, EU-Förderhinweis)
-muss auf jeder Seite vorhanden und in der jeweiligen Sprache korrekt beschriftet sein. Die
-englische Interreg-Logovariante ist laut Asset-Paket "Permission requested" – bis zur
-Freigabe wird auf der EN-Seite die offizielle DE/FR-Lockup-Grafik weiterverwendet und der
-Förderhinweis nur als Text auf Englisch ergänzt.
+- Footer: Pflicht-Co-Branding (eTruckCharge-Logo, Interreg-Logo, EU-Förderhinweis) muss auf
+  jeder Seite vorhanden und in der jeweiligen Sprache korrekt beschriftet sein. Die englische
+  Interreg-Logovariante ist laut Asset-Paket "Permission requested" – bis zur Freigabe wird
+  auf der EN-Seite die offizielle DE/FR-Lockup-Grafik weiterverwendet und der Förderhinweis
+  nur als Text auf Englisch ergänzt.
+- Header: Das EU-Emblem (`assets/img/interreg/eu-emblem-de.png` bzw. `-fr.png`, aus dem
+  offiziellen Lockup zugeschnitten) steht oben rechts und muss sichtbar größer dargestellt
+  werden als das eTruckCharge-Logo oben links (`.site-header .brand img` vs.
+  `.header-top .eu-emblem img` in `assets/css/style.css`) – das ist eine EU-Förder­vorgabe zur
+  Logogröße, nicht nur Geschmackssache. Bei Layoutänderungen im Header diese Größenrelation
+  beibehalten.
+
+## Partnerlogos
+
+- Liegen in `assets/img/partners/<slug>.png`, referenziert in der Partnerliste (Hover/Fokus
+  zeigt das Logo über dem Partnernamen, siehe `.partner-logo-preview` in
+  `assets/css/style.css`) sowie im Kontakt-Bereich (`.hka-logos`).
+- **Aktuell nur Platzhalter**: generierte Initialen-Badges (navy Verlauf, weiße Initialen),
+  keine echten Marken-/Institutionslogos. Sobald echte Logo-Dateien vorliegen, einfach unter
+  demselben Dateinamen/Slug ersetzen – keine HTML-Änderung nötig.
+- Hochschule Karlsruhe (HKA) ist **Konsortialleiter** (nicht "Projektträger"/"Lead partner" –
+  das war eine falsche Übersetzung aus dem Antragsformular) und im Projekt vertreten durch das
+  **Institut für Datenzentrierte Softwaresysteme (IDSS)** / *Institut des systèmes logiciels
+  centrés sur les données* / *Institute of Data-centric Software Systems*. Beide Logos (HKA +
+  IDSS) gehören zusammen dargestellt, aktuell als Platzhalter unter `hka.png` und `idss.png`.
 
 Siehe auch die Design-Spec: `docs/superpowers/specs/2026-08-11-etruckcharge-website-design.md`

@@ -57,17 +57,18 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--color-border);
 }
 
-.site-header .container {
+.header-top .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
 }
 
 .site-header .brand {
@@ -75,15 +76,73 @@ a {
   align-items: center;
   gap: 10px;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
+/* eTruckCharge's own logo stays visibly smaller than the EU emblem on the
+   right, per Interreg/EU funding-visibility rules on relative logo size. */
 .site-header .brand img {
-  height: 44px;
+  height: 32px;
   width: auto;
+}
+
+.header-top .eu-emblem {
+  flex-shrink: 0;
+}
+
+.header-top .eu-emblem img {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+
+.header-bottom {
+  border-top: 1px solid var(--color-border);
+}
+
+.header-bottom .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none;
+}
+
+.site-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.site-nav a {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+
+.site-nav a:hover {
+  background: var(--color-bg-alt);
+  color: var(--color-navy);
 }
 
 .lang-switch {
   display: flex;
+  flex-shrink: 0;
   gap: 4px;
   list-style: none;
   margin: 0;
@@ -290,6 +349,7 @@ section.alt {
 }
 
 .partner-list li {
+  position: relative;
   background: #fff;
   border: 1px solid var(--color-border);
   border-radius: 8px;
@@ -309,6 +369,78 @@ section.alt {
   font-size: 0.8rem;
   color: var(--color-text-light);
   margin-top: 2px;
+}
+
+/* Partner name reveals its logo on hover/focus (keyboard-accessible via
+   tabindex on .partner-name and :focus-within on the list item). */
+.partner-name {
+  border-bottom: 1px dotted var(--color-steel);
+  cursor: default;
+}
+
+.partner-name:focus-visible {
+  outline: 2px solid var(--color-interreg-blue);
+  outline-offset: 2px;
+}
+
+.partner-logo-preview {
+  position: absolute;
+  left: 14px;
+  bottom: calc(100% + 8px);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 10px 12px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  pointer-events: none;
+}
+
+.partner-list li:hover .partner-logo-preview,
+.partner-list li:focus-within .partner-logo-preview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.partner-logo-preview img {
+  height: 44px;
+  width: auto;
+  max-width: 160px;
+}
+
+.hka-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0 0;
+}
+
+.hka-logos img {
+  height: 56px;
+  width: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: #fff;
+}
+
+/* Publications / news (placeholder until content is available) */
+
+.coming-soon {
+  background: #fff;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  max-width: 60ch;
 }
 
 /* Contact */
@@ -349,10 +481,11 @@ section.alt {
 }
 
 .footer-cobranding img.etc-logo {
-  height: 48px;
+  height: 64px;
   width: auto;
-  filter: brightness(0) invert(1);
-  opacity: 0.95;
+  background: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
 }
 
 .footer-cobranding .divider {
@@ -362,10 +495,18 @@ section.alt {
 }
 
 .footer-cobranding img.interreg-logo {
-  height: 60px;
+  height: 110px;
   width: auto;
   background: #fff;
-  padding: 8px 12px;
+  padding: 10px 14px;
+  border-radius: 6px;
+}
+
+.footer-cobranding img.partner-lead-logo {
+  height: 64px;
+  width: auto;
+  background: #fff;
+  padding: 8px 14px;
   border-radius: 6px;
 }
 
