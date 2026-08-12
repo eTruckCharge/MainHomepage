@@ -2,6 +2,7 @@
 Borderless E-Mobility – A Federated Charging Park for Sustainable Freight Transport in the Upper Rhine.
 
 07/2026 – 06/2029 Project duration
+
 eTruckCharge is investigating how charging capacity that already exists at commercial sites can be made usable across company and national borders — enabling a safe, plannable shift to electric trucks for the trinational logistics sector. 
 
 
