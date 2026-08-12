@@ -52,16 +52,22 @@ gepflegt und muss trotzdem synchron bleiben.
 
 ## Partnerlogos
 
-- Liegen in `assets/img/partners/<slug>.png`, referenziert in der Partnerliste (Hover/Fokus
-  zeigt das Logo über dem Partnernamen, siehe `.partner-logo-preview` in
+- Liegen in `assets/img/partners/<slug>.png` bzw. `.svg`, referenziert in der Partnerliste
+  (Hover/Fokus zeigt das Logo über dem Partnernamen, siehe `.partner-logo-preview` in
   `assets/css/style.css`) sowie im Kontakt-Bereich (`.hka-logos`).
-- **Aktuell nur Platzhalter**: generierte Initialen-Badges (navy Verlauf, weiße Initialen),
-  keine echten Marken-/Institutionslogos. Sobald echte Logo-Dateien vorliegen, einfach unter
-  demselben Dateinamen/Slug ersetzen – keine HTML-Änderung nötig.
+- **Echte Logos eingebaut** für alle Partner außer IDSS: die meisten offiziell von den
+  jeweiligen Institutions-/Firmenwebsites heruntergeladen bzw. als Screenshot-Crop übernommen.
+  Sobald bessere/offizielle Dateien vorliegen (z. B. `trk.png`, das aktuell niedrig aufgelöst
+  ist), einfach unter demselben Dateinamen/Slug ersetzen – keine HTML-Änderung nötig.
+- **Nur `idss.png` ist noch ein Platzhalter** (generiertes Initialen-Badge): kein
+  eigenständiges Logo auffindbar, siehe nächster Punkt.
 - Hochschule Karlsruhe (HKA) ist **Konsortialleiter** (nicht "Projektträger"/"Lead partner" –
   das war eine falsche Übersetzung aus dem Antragsformular) und im Projekt vertreten durch das
   **Institut für Datenzentrierte Softwaresysteme (IDSS)** / *Institut des systèmes logiciels
-  centrés sur les données* / *Institute of Data-centric Software Systems*. Beide Logos (HKA +
-  IDSS) gehören zusammen dargestellt, aktuell als Platzhalter unter `hka.png` und `idss.png`.
+  centrés sur les données* / *Institute of Data-centric Software Systems*. Recherche (Stand
+  2026-08-12) fand dazu nur eine "Forschungsgruppe Datenzentrierte Softwaresysteme" (Leitung:
+  Prof. Dr. Christian Zirpins) ohne eigenständiges Logo – die Bezeichnung "IDSS" bleibt auf der
+  Website trotzdem bestehen (bestätigte Nutzer-Vorgabe). Beide Logos (HKA + IDSS) gehören
+  zusammen dargestellt; `hka.png` ist das echte Logo, `idss.png` bleibt vorerst Platzhalter.
 
 Siehe auch die Design-Spec: `docs/superpowers/specs/2026-08-11-etruckcharge-website-design.md`
