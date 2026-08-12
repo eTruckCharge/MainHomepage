@@ -79,10 +79,12 @@ a {
   flex-shrink: 0;
 }
 
-/* eTruckCharge's own logo stays visibly smaller than the EU emblem on the
-   right, per Interreg/EU funding-visibility rules on relative logo size. */
+/* NOTE: doubled to 64px on explicit user request (2026-08-12), which makes
+   it taller than the 52px EU emblem below — a deliberate deviation from the
+   Interreg/EU funding-visibility rule on relative logo size documented in
+   CLAUDE.md. Revisit before publishing if compliance is required. */
 .site-header .brand img {
-  height: 32px;
+  height: 64px;
   width: auto;
 }
 
@@ -91,7 +93,7 @@ a {
 }
 
 .header-top .eu-emblem img {
-  height: 52px;
+  height: 60px;
   width: auto;
   display: block;
 }
@@ -371,11 +373,19 @@ section.alt {
   margin-top: 2px;
 }
 
-/* Partner name reveals its logo on hover/focus (keyboard-accessible via
-   tabindex on .partner-name and :focus-within on the list item). */
+/* Partner name links to the partner's website and reveals its logo on
+   hover/focus (:focus-within on the list item; anchors are natively
+   focusable so no tabindex is needed). */
 .partner-name {
   border-bottom: 1px dotted var(--color-steel);
-  cursor: default;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.partner-name:hover {
+  color: var(--color-interreg-blue);
+  border-bottom-color: var(--color-interreg-blue);
 }
 
 .partner-name:focus-visible {
@@ -481,7 +491,7 @@ section.alt {
 }
 
 .footer-cobranding img.etc-logo {
-  height: 64px;
+  height: 35px;
   width: auto;
   background: #fff;
   padding: 8px 14px;
@@ -495,7 +505,7 @@ section.alt {
 }
 
 .footer-cobranding img.interreg-logo {
-  height: 110px;
+  height: 200px;
   width: auto;
   background: #fff;
   padding: 10px 14px;
